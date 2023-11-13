@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 3</title>
+    <script>
+        var negara = ['Indonesia', 'Malaysia', 'Singapura', 'Thailand', 'Vietnam', 'Filipina', 'Brunei', 'Myanmar', 'Kamboja', 'Laos'];
+
+        function tampilkanNegara() {
+            document.getElementById('hasil').innerHTML = "Negara-negara: " + negara.join(', ');
+        }
+
+        function aksesNegara() {
+            var selectedNegara = document.getElementById('selectNegara').value;
+
+            var indeksNegara = negara.indexOf(selectedNegara);
+
+            if (indeksNegara !== -1) {
+                document.getElementById('hasil').innerHTML = selectedNegara + " terdapat pada indeks: " + indeksNegara;
+            } else {
+                document.getElementById('hasil').innerHTML = selectedNegara + " tidak ditemukan dalam array.";
+            }
+        }
+
+        function tambahNegara() {
+
+            var namaNegaraBaru = document.getElementById('namaNegaraBaru').value;
+
+            negara.push(namaNegaraBaru);
+
+            document.getElementById('hasil').innerHTML = "Negara-negara baru: " + negara.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Negara Asean :</h1>
+    
+        <button onclick="tampilkanNegara()">Tampilkan Negara</button>
+    </div>
+
+    <form>
+        <label for="selectNegara">Pilih Negara:</label>
+        <select id="selectNegara" name="selectNegara">
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapura">Singapura</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Filipina">Filipina</option>
+            <option value="Brunei">Brunei</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Kamboja">Kamboja</option>
+            <option value="Laos">Laos</option>
+        </select>
+
+        <button type="button" onclick="aksesNegara()">Akses Negara</button>
+    </form>
+
+    <form>
+        <label for="namaNegaraBaru">Tambah Negara Baru:</label>
+        <input type="text" id="namaNegaraBaru" name="namaNegaraBaru">
+        <button type="button" onclick="tambahNegara()">Tambah Negara</button>
+    </form>
+
+    <div id="hasil">
+        Menampilkan Negara-negara :
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button[type="button"] {
+            background-color: #45a049;
+        }
+
+        #hasil {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</body>
+</html>

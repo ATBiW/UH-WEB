@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            transition: background-color 5s ease; 
+            text-align: center;
+            padding: 50px;
+        }
+
+        #kalimat {
+            font-size: 18px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        #kalimat:hover {
+            text-decoration: underline;
+        }
+
+        #kalimat.new {
+            color: green;
+        }
+    </style>
+    <script>
+        function ubahKalimat() {
+            var kalimatElement = document.getElementById('kalimat');
+
+            if (kalimatElement.classList.contains('new')) {
+                kalimatElement.innerHTML = "Saya merasa belum bisa belajar javascript";
+                kalimatElement.classList.remove('new');
+                document.body.style.backgroundColor = '#fff'; 
+            } else {
+                kalimatElement.innerHTML = "Ternyata saya masih kurang berlatih belajar javascript";
+                kalimatElement.classList.add('new');
+                document.body.style.backgroundColor = 'lightgreen';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var kalimatElement = document.getElementById('kalimat');
+            kalimatElement.addEventListener('click', ubahKalimat);
+        });
+    </script>
+</head>
+<body>
+    <div id="kalimat" style="font-weight:bolder;">Saya merasa belum bisa belajar javascript</div>
+</body>
+</html>
